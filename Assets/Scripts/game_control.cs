@@ -6,6 +6,7 @@ public class game_control : MonoBehaviour {
 
     public float points_count;
     public int coins_count, glasses_count, potions_count;
+    public float coin_price;
 
      
 	// Use this for initialization
