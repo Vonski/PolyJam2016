@@ -40,4 +40,27 @@ public class ButtonScripts : MonoBehaviour {
         Debug.Log("Changing level...Rly...trust me...("+lvl+")");
         //Application.LoadLevel(lvl);
     }
+    public void shop_buy(string item)
+    {
+        Debug.Log("Bought:" + item);
+        switch (item)
+        {
+            default:
+                Debug.Log("Such items doen't exist: " + item);
+                break;
+            case "Coin":
+                //coins++;
+                break;
+            case "Camera":
+                //coins++;
+                break;
+            case "Potion":
+                //coins++;
+                break;
+            case "Galsses":
+                //coins++;
+                break;
+
+        }
+    }
 }
