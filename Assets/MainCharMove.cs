@@ -41,11 +41,16 @@ public class MainCharMove : MonoBehaviour {
         }
        
         
-
+        
         transform.position += movement * speed * Time.deltaTime;
+        Vector3 scale = new Vector3(0.005f, 0.005f, 0);        
+        if (movement.y <0 )
+            transform.localScale += scale;
+        else if(movement.y > 0)
+            transform.localScale -= scale;
+
         Camera.main.transform.position += movement * speed * Time.deltaTime;
-        
-        
+
 
         //outside = false;
         //Debug.Log("I'm inside");
