@@ -23,6 +23,8 @@ public class ButtonScripts : MonoBehaviour {
     {
         obj_main.SetActive(false);
         obj_shop.SetActive(true);
+        GameObject.Find("Control").GetComponent<game_control>().shop_refresh();
+        
     }
     public void go_to_credtis()
     {
@@ -38,7 +40,7 @@ public class ButtonScripts : MonoBehaviour {
     public void go_to_level(string lvl)
     {
         Debug.Log("Changing level...Rly...trust me...("+lvl+")");
-        //Application.LoadLevel(lvl);
+        Application.LoadLevel(lvl);
     }
     public void shop_buy(string item)
     {
