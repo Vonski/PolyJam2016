@@ -57,7 +57,7 @@ public class ButtonScripts : MonoBehaviour {
             case "Potion":
                 //coins++;
                 break;
-            case "Galsses":
+            case "Glasses":
                 //coins++;
                 break;
 
