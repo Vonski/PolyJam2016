@@ -7,6 +7,7 @@ public class GirlScript : MonoBehaviour {
 	public string skinColor;
 	public string shirtColor;
 	public string pantsColor;
+	public Sprite lookz;
 
 
 	// Use this for initialization
