@@ -33,6 +33,10 @@ public class ButtonScripts : MonoBehaviour {
         obj_main.SetActive(false);
         obj_credits.SetActive(true);
     }
+    public void go_to_social()
+    {
+        obj_main.SetActive(false);
+    }
     public void go_to_mainmenu()
     {
         obj_credits.SetActive(false);

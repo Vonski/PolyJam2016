@@ -64,6 +64,7 @@ public class PhoneScripts : MonoBehaviour {
 
 	public void HidePhone(){
 		Debug.Log ("Phone hidden");
+        GameObject.Find("Canvas").GetComponent<ButtonScripts>().go_to_mainmenu();
 		endMovePosition = notOnScreenPosition;
 		sliding = true;
 	}
@@ -86,7 +87,7 @@ public class PhoneScripts : MonoBehaviour {
 	}
 
 	private void SetTexts(int girlNo){
-		if (girlNo >= girlsData.Length) {
+		if (girlsData[girlNo] == null) {
 			Debug.Log ("out of index, grill no: " + girlNo);
 			return;
 		}
