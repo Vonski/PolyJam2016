@@ -9,7 +9,7 @@ public class Target : MonoBehaviour, IPlayerState {
 
     void Start()
     {
-        //speed = 600.0f;
+ 
     }
 
     // Use this for initialization
@@ -19,12 +19,24 @@ public class Target : MonoBehaviour, IPlayerState {
         v3.z = 0;
         v3 -= transform.position;
         v3.Normalize();
+
+        Debug.Log("target");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if(transform.position != target_position)
+        if(Vector3.Distance(transform.position,target_position)>10)
+        {
+            v3 = tmp2.GetComponent<Global_scr>().target_position;
+            v3.z = 0;
+            v3 -= transform.position;
+            v3.Normalize();
             transform.position += v3 * speed * Time.deltaTime;
-        
+        }
+        else
+        {
+            GetComponent<PlayerStateMachine>().SetState<Patrol>();
+        }
+    
     }
 }

@@ -13,6 +13,8 @@ public class PhoneScripts : MonoBehaviour {
 	public Text legsText;
 	public Text skinText;
 
+    public bool inmenu;
+
 	public Image lookzPanel;
 	public float movementEpsilon = 0.5f;
 
@@ -64,7 +66,8 @@ public class PhoneScripts : MonoBehaviour {
 
 	public void HidePhone(){
 		Debug.Log ("Phone hidden");
-        GameObject.Find("Canvas").GetComponent<ButtonScripts>().go_to_mainmenu();
+        if (inmenu)
+            GameObject.Find("Canvas").GetComponent<ButtonScripts>().go_to_mainmenu();
 		endMovePosition = notOnScreenPosition;
 		sliding = true;
 	}
