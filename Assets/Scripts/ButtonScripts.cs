@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ButtonScripts : MonoBehaviour {
 
     private GameObject obj_shop, obj_main, obj_credits, obj_control;
+
 
     // Use this for initialization
     void Start () {
@@ -21,6 +23,8 @@ public class ButtonScripts : MonoBehaviour {
 	void Update () {
 	
 	}
+		
+
     public void go_to_shop()
     {
         obj_main.SetActive(false);
