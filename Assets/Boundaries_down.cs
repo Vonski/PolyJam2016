@@ -22,16 +22,30 @@ public class Boundaries_down : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.tag == "Player")
+        {
             down = false;
             obj.GetComponent<CollisionsSettings>().down = false;
-        Debug.Log("collision!");
+        }
+        if (other.gameObject.tag == "Dupeczki")
+        {
+            other.gameObject.GetComponent<CollisionsSettingsDupy>().down = false;
+        }
 
     }
     void OnCollisionExit2D(Collision2D other)
     {
-       
-        down = true;
-        obj.GetComponent<CollisionsSettings>().down = true;
+
+        if (other.gameObject.tag == "Player")
+        {
+            down = true;
+            obj.GetComponent<CollisionsSettings>().down = true;
+        }
+        if (other.gameObject.tag == "Dupeczki")
+        {
+            other.gameObject.GetComponent<CollisionsSettingsDupy>().down = true;
+        }
+
 
     }
 

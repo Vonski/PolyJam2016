@@ -46,7 +46,8 @@ public class Patrol : MonoBehaviour, IPlayerState {
             else
                 GetComponent<PlayerStateMachine>().SetState<Target>();
             offset = new Vector3(Random.Range(-1.0F, 1.0F), Random.Range(-0.05F, 0.05F), 0);
-            Debug.Log("Randozmied");
+            if ((gameObject.GetComponent<CollisionsSettingsDupy>().up == false && offset.y > 0) || (gameObject.GetComponent<CollisionsSettingsDupy>().down == false && offset.y < 0))
+                offset.y = 0;
         }
     }
 }
