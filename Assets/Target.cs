@@ -9,7 +9,7 @@ public class Target : MonoBehaviour, IPlayerState {
 
     void Start()
     {
-        speed = 3.0f;
+        //speed = 600.0f;
     }
 
     // Use this for initialization

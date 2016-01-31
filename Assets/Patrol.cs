@@ -12,12 +12,11 @@ public class Patrol : MonoBehaviour, IPlayerState {
     void Start()
     {
         boom = true;
-        tmp = GameObject.Find("Global");
     }
 
     void OnEnable()
     {
-        speed = Random.Range(3F, 4F);
+        //speed = Random.Range(3F, 4F);
         StartCoroutine(ChangeSpeed());
         boom = true;
     }
