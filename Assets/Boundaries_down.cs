@@ -20,18 +20,32 @@ public class Boundaries_down : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Dupeczki")
+        {
+            collision.gameObject.GetComponent<CollisionSettingsDupa>().down = false;
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
             down = false;
             obj.GetComponent<CollisionsSettings>().down = false;
+        }
 
     }
-    void OnCollisionExit2D(Collision2D other)
+    void OnCollisionExit2D(Collision2D collision)
     {
-       
-        down = true;
-        obj.GetComponent<CollisionsSettings>().down = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            down = true;
+            obj.GetComponent<CollisionsSettings>().down = true;
+        }
+        else if (collision.gameObject.tag == "Dupeczki")
+        {
+            collision.gameObject.GetComponent<CollisionSettingsDupa>().down = true;
+        }
 
     }
+
 
 }

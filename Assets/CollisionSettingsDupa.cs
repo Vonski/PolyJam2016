@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollisionsSettings : MonoBehaviour {
+public class CollisionSettingsDupa : MonoBehaviour {
 
-    public bool right=true, left=true, up=true, down=true, up_dupa=true, down_dupa=true;
 	// Use this for initialization
+    public bool up = true, down = true, right = true, left = true;
 	void Start () {
 	
 	}

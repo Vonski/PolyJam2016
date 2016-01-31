@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollisionsSettings : MonoBehaviour {
+public class CollisionSettingdDupa : MonoBehaviour {
 
-    public bool right=true, left=true, up=true, down=true, up_dupa=true, down_dupa=true;
+    public bool up = true, down = true, right = true, left = true;
 	// Use this for initialization
 	void Start () {
 	

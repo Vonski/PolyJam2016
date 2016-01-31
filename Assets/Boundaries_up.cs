@@ -23,16 +23,28 @@ public class Boundaries_up : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Dupeczki")
+        {
+            collision.gameObject.GetComponent<CollisionSettingsDupa>().up = false;
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
             up = false;
             obj.GetComponent<CollisionsSettings>().up = false;
-        
-        
+        }
+
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        
-        up = true;
-        obj.GetComponent<CollisionsSettings>().up = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            up = true;
+            obj.GetComponent<CollisionsSettings>().up = true;
+        }
+        else if (collision.gameObject.tag == "Dupeczki")
+        {
+            collision.gameObject.GetComponent<CollisionSettingsDupa>().up = true;
+        }
 
     }
 
