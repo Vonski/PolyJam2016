@@ -12,6 +12,6 @@ public class Global_scr : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        target_position = GameObject.Find("MainPlayer").transform.position;
+        //target_position = GameObject.Find("MainPlayer").transform.position;
     }
 }

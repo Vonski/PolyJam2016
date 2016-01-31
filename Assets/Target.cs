@@ -35,7 +35,7 @@ public class Target : MonoBehaviour, IPlayerState {
         }
         else
         {
-            GetComponent<PlayerStateMachine>().SetState<Patrol>();
+            GetComponent<PlayerStateMachine>().SetState<Pozowanie>();
         }
     
     }

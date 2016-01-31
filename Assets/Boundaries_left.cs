@@ -22,16 +22,24 @@ public class Boundaries_left : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       
-        left = false;
-        obj.GetComponent<CollisionsSettings>().left = false;
-        Debug.Log("collision!");
+        if (collision.gameObject.tag == "Player")
+        {
+            left = false;
+            obj.GetComponent<CollisionsSettings>().left = false;
+        }
+        if (collision.gameObject.tag == "Dupeczki")
+        {
+            Destroy(collision.gameObject);
+        }
               
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        left = true;
-        obj.GetComponent<CollisionsSettings>().left = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            left = true;
+            obj.GetComponent<CollisionsSettings>().left = true;
+        }
 
     }
 
