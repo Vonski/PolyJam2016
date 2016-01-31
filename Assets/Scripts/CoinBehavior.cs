@@ -7,7 +7,7 @@ public class CoinBehavior : MonoBehaviour {
 	Vector3 endPosition;
 	float force;
 	float coinSpeed;
-	float movementEpsilon = 0.5f;
+	float movementEpsilon = 5f;
 
 	// Use this for initialization
 	void Start () {
