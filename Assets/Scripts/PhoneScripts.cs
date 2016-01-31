@@ -13,11 +13,11 @@ public class PhoneScripts : MonoBehaviour {
 	public Text legsText;
 	public Text skinText;
 
-    public bool inmenu;
-
 	public Image lookzPanel;
 	public float movementEpsilon = 0.5f;
 
+	public bool inmenu;
+	public AudioClip showClip;
 	public GirlScript [] girlsData; //przydaloby sie dynamicznie
 	public Transform notOnScreenPosition;
 	public Transform onScreenPosition;
@@ -44,6 +44,7 @@ public class PhoneScripts : MonoBehaviour {
 		if (sliding)
 			MovePhone ();
 		if(Input.GetKey(KeyCode.H)){
+			GetComponent<AudioSource> ().PlayOneShot (showClip);
 			ShowPhone();
 		}
 	}
@@ -66,8 +67,8 @@ public class PhoneScripts : MonoBehaviour {
 
 	public void HidePhone(){
 		Debug.Log ("Phone hidden");
-        if (inmenu)
-            GameObject.Find("Canvas").GetComponent<ButtonScripts>().go_to_mainmenu();
+		if(inmenu)
+        	GameObject.Find("Canvas").GetComponent<ButtonScripts>().go_to_mainmenu();
 		endMovePosition = notOnScreenPosition;
 		sliding = true;
 	}
