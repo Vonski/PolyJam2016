@@ -23,8 +23,12 @@ public class ButtonScripts : MonoBehaviour {
 	void Update () {
 	
 	}
+    public void exit()
+    {
+        
+    }
 		
-
+    
     public void go_to_shop()
     {
         obj_main.SetActive(false);
