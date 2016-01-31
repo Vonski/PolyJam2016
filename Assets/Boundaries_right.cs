@@ -18,15 +18,23 @@ public class Boundaries_right : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        right = false;
-        obj.GetComponent<CollisionsSettings>().right = false;
-        Debug.Log("collision!");
-
+        if (collision.gameObject.tag == "Player")
+        {
+            right = false;
+            obj.GetComponent<CollisionsSettings>().right = false;
+        }
+        if (collision.gameObject.tag == "Dupeczki")
+        {
+            Destroy(collision.gameObject);
+        }
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        right = true;
-        obj.GetComponent<CollisionsSettings>().right = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            right = true;
+            obj.GetComponent<CollisionsSettings>().right = true;
+        }
 
     }
         
