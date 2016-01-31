@@ -8,7 +8,7 @@ public class CoinThrow : MonoBehaviour {
 	public AudioClip coinThrowSound;
 	public float coinSpeed;
 
-	CrosshairControl crosshair;
+	public CrosshairControl crosshair;
 	game_control controller;
 	enum Direction {N, NE, E, SE, S, SW, W, NW};
 	Direction heading;
@@ -16,7 +16,7 @@ public class CoinThrow : MonoBehaviour {
 	void Start () {
 		controller = GameObject.FindGameObjectWithTag ("Controller").GetComponent<game_control> ();
 		heading = Direction.N;
-		crosshair = GameObject.FindGameObjectWithTag ("crosshair").GetComponent<CrosshairControl>();
+		//crosshair = GameObject.FindGameObjectWithTag ("crosshair").GetComponent<CrosshairControl>();
 		Debug.Log (crosshair);
 	}
 		
