@@ -16,6 +16,7 @@ public class Idz : MonoBehaviour, IPlayerState {
     void Update()
     {
         transform.position += offset * speed * Time.deltaTime;
+        //if()
     }
 
     IEnumerator ChangeSpeed()

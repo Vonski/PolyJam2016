@@ -45,5 +45,6 @@ public class Patrol : MonoBehaviour, IPlayerState {
         else
             GetComponent<PlayerStateMachine>().SetState<Target>();
         offset = new Vector3(Random.Range(-1.0F, 1.0F), Random.Range(-0.05F, 0.05F), 0);
+        Debug.Log("Randozmied");
     }
 }
