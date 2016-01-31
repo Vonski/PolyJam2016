@@ -25,7 +25,7 @@ public class Target : MonoBehaviour, IPlayerState {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Vector3.Distance(transform.position,target_position)>10)
+        if(Vector3.Distance(transform.position,target_position)>20)
         {
             v3 = tmp2.GetComponent<Global_scr>().target_position;
             v3.z = 0;

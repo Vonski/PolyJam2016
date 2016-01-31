@@ -25,6 +25,7 @@ public class Boundaries_left : MonoBehaviour
        
         left = false;
         obj.GetComponent<CollisionsSettings>().left = false;
+        Debug.Log("collision!");
               
     }
     void OnCollisionExit2D(Collision2D collision)
