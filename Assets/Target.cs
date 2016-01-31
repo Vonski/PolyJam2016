@@ -32,11 +32,10 @@ public class Target : MonoBehaviour, IPlayerState {
             v3 -= transform.position;
             v3.Normalize();
             transform.position += v3 * speed * Time.deltaTime;
-            //
         }
         else
         {
-            GetComponent<PlayerStateMachine>().SetState<Patrol>();
+            GetComponent<PlayerStateMachine>().SetState<Pozowanie>();
         }
     
     }
