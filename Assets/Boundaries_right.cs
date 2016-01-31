@@ -20,7 +20,8 @@ public class Boundaries_right : MonoBehaviour {
     {
         right = false;
         obj.GetComponent<CollisionsSettings>().right = false;
-                           
+        Debug.Log("collision!");
+
     }
     void OnCollisionExit2D(Collision2D collision)
     {

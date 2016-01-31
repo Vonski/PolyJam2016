@@ -23,6 +23,8 @@ public class Patrol : MonoBehaviour, IPlayerState {
 
     void Update()
     {
+        //if (Physics2D.IsTouching(GameObject.Find("Deptak_placeholder").GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>()))
+        //    Destroy(gameObject);
         transform.position += offset * speed * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Space))
@@ -31,20 +33,20 @@ public class Patrol : MonoBehaviour, IPlayerState {
             tmp.GetComponent<Global_scr>().target_position = v3.transform.position;
 
             boom = false;
-
-            
-
         }
     }
 
     IEnumerator ChangeSpeed()
     {
         yield return new WaitForSeconds(Random.Range(1F, 2.0F));
-        if(boom)
-            GetComponent<PlayerStateMachine>().SetState<Stoj>();
-        else
-            GetComponent<PlayerStateMachine>().SetState<Target>();
-        offset = new Vector3(Random.Range(-1.0F, 1.0F), Random.Range(-0.05F, 0.05F), 0);
-        Debug.Log("Randozmied");
+        if (GetComponent<PlayerStateMachine>().Current == GetComponent<PlayerStateMachine>().Get<Patrol>())
+        {
+            if (boom)
+                GetComponent<PlayerStateMachine>().SetState<Stoj>();
+            else
+                GetComponent<PlayerStateMachine>().SetState<Target>();
+            offset = new Vector3(Random.Range(-1.0F, 1.0F), Random.Range(-0.05F, 0.05F), 0);
+            Debug.Log("Randozmied");
+        }
     }
 }

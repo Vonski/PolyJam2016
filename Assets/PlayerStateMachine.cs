@@ -6,7 +6,7 @@ public class PlayerStateMachine : StateMachine<IPlayerState> {
     {
         SetState<Stoj>();
     }
-	
+  
 }
 
 public interface IPlayerState : IMachineState

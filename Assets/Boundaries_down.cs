@@ -24,6 +24,7 @@ public class Boundaries_down : MonoBehaviour
     {
             down = false;
             obj.GetComponent<CollisionsSettings>().down = false;
+        Debug.Log("collision!");
 
     }
     void OnCollisionExit2D(Collision2D other)
