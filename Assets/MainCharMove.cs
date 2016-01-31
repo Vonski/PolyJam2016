@@ -49,7 +49,7 @@ public class MainCharMove : MonoBehaviour {
         else if(movement.y > 0)
             transform.localScale -= scale;
 
-        Camera.main.transform.position += movement * speed * Time.deltaTime;
+       // Camera.main.transform.position += movement * speed * Time.deltaTime;
 
 
         //outside = false;
